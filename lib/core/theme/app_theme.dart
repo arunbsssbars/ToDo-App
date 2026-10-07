@@ -45,7 +45,7 @@ ThemeData getLightTheme() {
       ),
       iconTheme: const IconThemeData(color: kLightTextPrimary),
     ),
-    cardTheme: CardTheme(
+    cardTheme: CardThemeData(
       color: kLightCardColor,
       elevation: 0,
       shape: RoundedRectangleBorder(
@@ -120,7 +120,7 @@ ThemeData getDarkTheme() {
       ),
       iconTheme: const IconThemeData(color: kDarkTextPrimary),
     ),
-    cardTheme: CardTheme(
+    cardTheme: CardThemeData(
       color: kDarkCardColor,
       elevation: 0,
       shape: RoundedRectangleBorder(

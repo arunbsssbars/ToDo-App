@@ -77,7 +77,6 @@ class TodoProvider extends ChangeNotifier {
             final weightB = priorityWeight[b.priority] ?? 0;
             return weightB.compareTo(weightA);
           case TodoSortBy.newest:
-          default:
             return (b.createdAt ?? DateTime.now()).compareTo(a.createdAt ?? DateTime.now());
         }
       });

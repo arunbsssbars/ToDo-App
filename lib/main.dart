@@ -113,7 +113,6 @@ class AuthGatekeeper extends StatelessWidget {
         return const TodoHomeScreen();
       case AuthStatus.unauthenticated:
       case AuthStatus.error:
-      default:
         return const LoginScreen();
     }
   }
