@@ -44,7 +44,12 @@ jobs:
             pod install || pod install --repo-update
             cd ..
           fi
-          flutter build ios --release --no-codesign
+          flutter build ios --release --no-codesign || {
+            echo "Flutter build exited with signing check, building unsigned with xcodebuild..."
+            cd ios
+            xcodebuild -workspace Runner.xcworkspace -scheme Runner -configuration Release -destination 'generic/platform=iOS' CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY="" clean build
+            cd ..
+          }
 
       - name: Bundle Payload into Unsigned IPA
         run: |
